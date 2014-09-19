@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>METADATA.json</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+<style type="text/css">
+  .popover {
+    max-width: 1980px;
+    font-family: Courier,serif;
+}
+
+.footer {
+  color: #bbb;
+  text-align: center;
+  font-size: smaller;
+  padding: 0 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer:hover {
+  color: #444;
+}
+
+.footer a {
+  color: #add8e6;
+}
+
+.footer:hover a {
+  color: #0088cc;
+}
+
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  list-style: none;
+  line-height: 1.2em;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+</style>
+  <link rel="stylesheet" href="http://benjamine.github.io/jsondiffpatch/src/formatters/html.css" type="text/css" />
+</head>
+<body>
+<div class="container-fluid">
+  
+  
+
+
+<ul class="nav nav-tabs">
+    <li><a href="https://github.com/fontdirectory/iceberg/tree/gh-pages" target="_blank"><i class="fa fa-github"></i> gh-pages</a></li>
+    <li><a href="https://github.com/fontdirectory/iceberg" target="_blank"><i class="fa fa-github-square"></i> Github Page</a></li>
+    <li><a href="index.html">Summary</a></li>
+    <li>
+        
+        <a href="review.html">Review</a>
+        
+    </li>
+    <li><a href="checks.html">Pre-Build Checks</a></li>
+    <li><a href="tests.html">Tests</a></li>
+    <li><a href="buildlog.html">Build Log</a></li>
+    <li class="active"><a href="metadata.html">METADATA.json</a></li>
+    <li><a href="bakery-yaml.html">bakery.yaml</a></li>
+    <li><a href="description.html">Description</a></li>
+  </ul>
+
+
+  
+    <h3>METADATA Tests</h3>
+    <table class="table table-striped table-bordered table-condensed tablesorter">
+      <thead>
+      <tr>
+        <th>Category</th>
+        <th>Description</th>
+        <th>File</th>
+        <th>Result</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      
+      
+      
+        <div id="piechart1"></div>
+          
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_charset_latin()">Iceberg-Regular.latin is real TrueType file</span></td>
+              <td>METADATA.json</td>
+              <td>Iceberg-Regular.latin subset does not exist</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_charset_menu()">Iceberg-Regular.menu is real TrueType file</span></td>
+              <td>METADATA.json</td>
+              <td>Iceberg-Regular.menu subset does not exist</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_top_keys_types()">METADATA.json should have proper top keys types</span></td>
+              <td>METADATA.json</td>
+              <td>name key type invalid</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_filename_matches_postScriptName()">METADATA.json `filename` matches `postScriptName`</span></td>
+              <td>METADATA.json</td>
+              <td>u'Iceberg' != u'Iceberg-Regular'
+- Iceberg
++ Iceberg-Regular
+</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_fullname_matches_postScriptName()">METADATA.json `fullName` matches `postScriptName`</span></td>
+              <td>METADATA.json</td>
+              <td>u'Iceberg' != u'Iceberg Regular'
+- Iceberg
++ Iceberg Regular
+</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_regular_is_400()">Regular should be 400</span></td>
+              <td>METADATA.json</td>
+              <td>METADATA.json does not contain Regular font. At least one font must be Regular and its weight must be 400</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_text_files_exist.py:test_copyrighttxt_exists()">Font folder should contains COPYRIGHT.txt</span></td>
+              <td>METADATA.json</td>
+              <td>['COPYRIGHT.txt'] does not exist in project</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_text_files_exist.py:test_licensetxt_exists()">Font folder should contains LICENSE.txt</span></td>
+              <td>METADATA.json</td>
+              <td>['LICENSE.txt', 'OFL.txt'] does not exist in project</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_description_is_more_than_500b()">DESCRIPTION.en_us.html is more than 500 bytes</span></td>
+              <td>METADATA.json</td>
+              <td>DESCRIPTION.en_us.html must have size larger than 500 bytes</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_description_is_valid_html()">DESCRIPTION.en_us.html is not real html file</span></td>
+              <td>METADATA.json</td>
+              <td>DESCRIPTION.en_us.html is not real html file</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_daltonmaag_catalogue()">DALTONMAAG.com</span></td>
+              <td>METADATA.json</td>
+              <td>False is not true</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_fontshop_catalogue()">FONTSHOP.com</span></td>
+              <td>METADATA.json</td>
+              <td>False is not true</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_veer_catalogue()">VEER.com</span></td>
+              <td>METADATA.json</td>
+              <td>False is not true</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_regular_is_normal()">Usually Regular should be normal style</span></td>
+              <td>METADATA.json</td>
+              <td>False is not true</td>
+              <td>FAIL</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_menu_contains_proper_glyphs.py:test_check_menu_contains_proper_glyphs()">Check menu file contains proper glyphs</span></td>
+              <td>METADATA.json</td>
+              <td>Iceberg-Regular.ttf: Menu is missing glyphs: " "</td>
+              <td>FAIL</td>
+            </tr>
+          
+          
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_atleast_latin_menu_subsets_exist()">METADATA.json subsets should have at least 'menu' and 'latin'</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_designer_exists_in_profiles_csv()">Designer exists in GWF profiles.csv</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_fonts_items_dicts()">METADATA.json fonts key items are dicts</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_fonts_key_list()">METADATA.json font key should be list</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_has_unique_style_weight_pairs()">METADATA.json only contains unique style:weight pairs</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_keys()">METADATA.json should have top keys: ["name", "designer", "license", "visibility", "category", "size", "dateAdded", "fonts", "subsets"]</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_license()">METADATA.json license is 'Apache2', 'UFL' or 'OFL'</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_no_unknown_top_keys()">METADATA.json don't have unknown top keys</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_subsets_key_list()">METADATA.json subsets key should be list</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required, info</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_font_copyright.py:test_copyright_contains_correct_rfn()">Copyright string contains "Reserved File Name"</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_font_copyright.py:test_copyright_is_consistent_across_family()">METADATA.json fonts copyright string is the same for all items</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_font_copyright.py:test_copyright_matches_pattern()">Copyright string matches to Copyright * 20\d\d * (*@*.*)</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_font_copyright.py:test_metadata_copyright_size()">Copyright string should be less than 500 chars</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_family()">Font and METADATA.json have the same name</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_postScriptName_matches_ttf_fontname()">Checks METADATA.json 'postScriptName' matches TTF 'postScriptName'</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_text_files_exist.py:test_description_exists()">Font folder should contains DESCRIPTION.en_us.html</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_metadata_fields.py:test_check_metadata_fields()">Check METADATA.json "fonts" property items have required field</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_files_menu_agreements.py:test_menu_file_agreement()">Check fonts have corresponding menu files</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>required</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_canonical_filenames.py:test_check_canonical_filenames()">Test If filename is canonical</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_fontbureau_catalogue()">FONTBUREAU.com</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_fontscom_catalogue()">FONTS.com</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_fontsmith_catalogue()">FONTSMITH.com</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_houseind_catalogue()">HOUSEIND.com</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_does_not_familyName_exist_in_myfonts_catalogue()">MYFONTS.com</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_family_is_listed_in_gwf()">Fontfamily is listed in Google Font Directory</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_fonts_no_dupes()">METADATA.json fonts propery only should have uniq values</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_font_name_matches_family()">METADATA.json fonts 'name' property should be same as font familyname</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_family_values_are_all_the_same()">Check that METADATA family values are all the same</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_font_have_regular()">According GWF standarts font should have Regular style.</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_fonts_fields_have_fontname()">METADATA.json fonts items fields "name", "postScriptName", "fullName", "filename" contains font name right format</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_fullname_is_equal_to_internal_font_fullname()">METADATA.json 'fullname' value matches internal 'fullname'</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_text_files_exist.py:test_fontlogtxt_exists()">Font folder should contains FONTLOG.txt</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_subsets_exists.py:test_check_subsets_exists()">Check that corresponding subset files exist for fonts</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_monospace_agreements.py:test_check_monospace_agreement()">Monospace font has hhea.advanceWidthMax equal to each glyph advanceWidth</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_metadata_style_matches_names.py:test_check_italic_style_matches_names()">Check metadata.json font.style `italic` matches font internal</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_metadata_style_matches_names.py:test_check_normal_style_matches_names()">Check metadata.json font.style `italic` matches font internal</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_metadata_matches_nametable.py:test_check_metadata_matches_nametable()">None</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_glyph_consistency.py:test_the_same_encodings_of_glyphs_across_family()">The same unicode encodings of glyphs across family?</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_glyph_consistency.py:test_the_same_names_of_glyphs_across_family()">The same names of glyphs across family?</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_glyph_consistency.py:test_the_same_number_of_glyphs_across_family()">The same number of glyphs across family?</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_font_name_not_in_camelcase.py:test_fontname_not_in_camel_case()">Check if fontname is not camel cased</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_familyname_matches_fontnames.py:test_check_familyname_matches_fontnames()">Check font name is the same as family name</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_canonical_weights.py:test_check_canonical_weights()">Check that weights have canonical value</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_canonical_weights.py:test_postscriptname_contains_correct_weight()">Metadata weight matches postScriptName</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_canonical_weights.py:test_font_weight_same_as_in_metadata()">Font weight matches metadata.json value of key "weight"</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_canonical_weights.py:test_metadata_contains_current_font()">METADATA.json should contains testing font, under canonic name</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+            <tr>
+              <td>note</td>
+              <td><span class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_canonical_styles.py:test_check_canonical_styles()">Test If font styles are canonical</span></td>
+              <td>METADATA.json</td>
+              <td></td>
+              <td>OK</td>
+            </tr>
+          
+      
+      </table>
+  
+
+  
+  
+  
+  
+    <h3 class="text-center">JSON Diff of the Two Files</h3>
+    <div class="col-md-6">
+      <h4>METADATA.json imported from upstream repo</h4>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 col-md-5">
+            <div id="editor"></div>
+            <textarea id="metadatajson" name="metadatajson">{
+  "name": "Iceberg",
+  "designer": "Cyreal",
+  "license": "OFL",
+  "visibility": "External",
+  "category": "Display",
+  "size": 19655,
+  "fonts": [
+    {
+      "name": "Iceberg",
+      "style": "normal",
+      "weight": 400,
+      "filename": "Iceberg-Regular.ttf",
+      "postScriptName": "Iceberg-Regular",
+      "fullName": "Iceberg",
+      "copyright": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org), with Reserved Font Name \"Iceberg\"."
+    }
+  ],
+  "subsets": [
+    "latin",
+    "menu"
+  ],
+  "dateAdded": "2012-01-25"
+}
+</textarea>
+          </div>
+        </div>
+      </div>
+      <p class="navbar-text navbar-left">
+        <span><a href="https://github.com/fontdirectory/iceberg/blob/master/METADATA.json" class="navbar-link">View</a></span>
+        <span><a href="https://github.com/fontdirectory/iceberg/edit/master/METADATA.json" class="navbar-link">Edit</a></span>
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <h4>METADATA.json.new generated from files</h4>
+      <div id="editor_new"></div>
+      <textarea id="metadatajson_new" name="metadatajson_new">{
+  "name": "Iceberg",
+  "designer": "Cyreal",
+  "license": "OFL",
+  "visibility": "External",
+  "category": "Display",
+  "size": 19655,
+  "fonts": [
+    {
+      "name": "Iceberg",
+      "style": "normal",
+      "weight": 400,
+      "filename": "Iceberg-Regular.ttf",
+      "postScriptName": "Iceberg-Regular",
+      "fullName": "Iceberg",
+      "copyright": "Copyright (c) 2011, Cyreal (www.cyreal.org), with Reserved Font Name \"Iceberg\"."
+    }
+  ],
+  "subsets": [
+    "latin"
+  ],
+  "dateAdded": "2012-01-25"
+}
+</textarea>
+    </div>
+
+    <div id="delta-panel-visual" style="clear: both;">
+      <p id="visualdiff"></p>
+    </div>
+
+  
+</div>
+<!-- Footer -->
+
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <ul class="footer-links">
+        <li><a href='https://github.com/googlefonts/fontbakery-cli/edit/master/bakery_cli/report/templates/metadata.html'>Edit this page's template</a></li>
+        <li><a href='https://github.com/googlefonts/fontbakery-cli/'>Made with Font Bakery</a> (<a href='http://www.gnu.org/philosophy/free-sw.html'>libre software</a> available under the terms of the <a href='https://github.com/googlefonts/fontbakery-cli/blob/master/LICENSE.txt'>Apache 2.0 license</a>.)</li>
+        <li>Please <a href='https://github.com/googlefonts/fontbakery-cli/issues/new'>report bugs</a>, suggest features, and contribute on <a href='https://github.com/googlefonts/fontbakery-cli/'>GitHub <i class='icon-github'></i></a></li>
+        
+        <li>fa30863d4ea1f546092305ec0f12a4de890080fc, Fri Sep 19 10:54:44 2014 +0300</li>
+        
+      </ul>
+    </div>
+  </footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.7/js/jquery.tablesorter.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+
+<script type="text/javascript" src="http://benjamine.github.io/jsondiffpatch/build/bundle-full.min.js"></script>
+<script type="text/javascript" src="http://benjamine.github.io/jsondiffpatch/build/formatters.min.js"></script>
+
+
+<script>
+    $(function(){
+        // apopover class used on dashboard
+        $('.apopover').each(function (index, item) {
+            $(item).popover();
+        });
+        $('.tablesorter').tablesorter();
+    })
+</script>
+<style>
+    .popover {
+        max-width: 1980px;
+        font-family: Courier;
+    }
+</style>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+    
+    var data = google.visualization.arrayToDataTable([
+        ['Tests', '#'],
+        ['Success 47', 47],
+        ['Fixed 0', 0],
+        ['Failed 15', 15],
+        ['Error 0', 0]
+    ]);
+
+    var options = {
+      title: "METADATA.json",
+      is3D: true,
+      colors: ['#468847', '#3a87ad', '#b94a48', '#c09853'],
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+    chart.draw(data, options);
+
+    
+    
+
+  }
+</script>
+
+<script>
+  var doDiff = function() {
+    var left = JSON.parse($('#metadatajson').text());
+    var right = JSON.parse($('#metadatajson_new').text());
+
+    var instance = jsondiffpatch.create({
+      objectHash: function(obj) {
+        return '';
+      }
+    });
+
+    var delta = instance.diff(left, right);
+
+    var visualdiff = document.getElementById('visualdiff');
+    $(visualdiff).empty();
+    if (visualdiff) {
+      visualdiff.innerHTML = jsondiffpatch.formatters.html.format(delta, left);
+
+      var scripts = visualdiff.querySelectorAll('script');
+      for (var i = 0; i < scripts.length; i++) {
+        var s = scripts[i];
+        /* jshint evil: true */
+        eval(s.innerHTML);
+      }
+    }
+    $(visualdiff).find('div').first().find('pre')
+        .each(function(i){
+          $(this).css("background-color", "transparent").css("border", "0");
+        })
+  };
+
+  var heightUpdateFunction = function(editor, editor_div, editor_section) {
+      var newHeight =
+          editor.getSession().getScreenLength()
+              * editor.renderer.lineHeight
+              + editor.renderer.scrollBar.getWidth();
+      editor_div.height(newHeight.toString() + "px");
+      editor_section.height(newHeight.toString() + "px");
+      // This call is required for the editor to fix all
+      // of its inner structure for adapting to a change in size
+      editor.resize();
+    };
+
+  var prepareEditor = function(editor, textarea) {
+    editor.setTheme("ace/theme/solarized_light");
+    editor.getSession().setMode("ace/mode/html");
+    editor.getSession().setUseSoftTabs(false);
+    editor.getSession().setUseWrapMode(true);
+    editor.setHighlightActiveLine(false);
+
+    textarea.hide();
+
+    editor.getSession().setUseWrapMode(true);
+    editor.getSession().setValue(textarea.val());
+    //editor.setReadOnly(true);
+  };
+  $(document).ready(function () {
+    var editor = ace.edit("editor"),
+        editor_new = ace.edit("editor_new"),
+        textarea = $('textarea[name="metadatajson"]'),
+        textarea_new = $('textarea[name="metadatajson_new"]');
+
+    prepareEditor(editor, textarea);
+    prepareEditor(editor_new, textarea_new);
+
+    heightUpdateFunction(editor, $('#editor'), $('#editor-section'));
+    heightUpdateFunction(editor_new, $('#editor_new'), $('#editor_new-section'));
+
+    doDiff();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summary</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+<style type="text/css">
+  .popover {
+    max-width: 1980px;
+    font-family: Courier,serif;
+}
+
+.footer {
+  color: #bbb;
+  text-align: center;
+  font-size: smaller;
+  padding: 0 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer:hover {
+  color: #444;
+}
+
+.footer a {
+  color: #add8e6;
+}
+
+.footer:hover a {
+  color: #0088cc;
+}
+
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  list-style: none;
+  line-height: 1.2em;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+</style>
+  <style>
+    /* All tables should only be as wide as they need to be */
+    /*.flex-container {*/
+        /*height: 100%;*/
+        /*padding: 0;*/
+        /*margin: 0;*/
+        /*display: -webkit-box;*/
+        /*display: -moz-box;*/
+        /*display: -ms-flexbox;*/
+        /*display: -webkit-flex;*/
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    /*}*/
+
+    .flex-container {
+      /* We first create a flex layout context */
+      display: flex;
+
+      /* Then we define the flow direction and if we allow the items to wrap
+       * Remember this is the same as:
+       * flex-direction: row;
+       * flex-wrap: wrap;
+       */
+      flex-flow: row wrap;
+
+      /* Then we define how is distributed the remaining space */
+      justify-content: space-around;
+    }
+
+    .table {
+        max-width: none;
+        width: inherit;
+    }
+
+    td.coverageStats, td.coverageAverage {
+      cursor: pointer;
+    }
+
+    .table tbody tr > td.success {
+      background-color: #dff0d8 !important;
+    }
+
+    .table tbody tr > td.error {
+      background-color: #f2dede !important;
+    }
+
+    .table tbody tr > td.warning {
+      background-color: #fcf8e3 !important;
+    }
+
+    .table tbody tr > td.info {
+      background-color: #d9edf7 !important;
+    }
+
+    .table-hover tbody tr:hover > td.success {
+      background-color: #d0e9c6 !important;
+    }
+
+    .table-hover tbody tr:hover > td.error {
+      background-color: #ebcccc !important;
+    }
+
+    .table-hover tbody tr:hover > td.warning {
+      background-color: #faf2cc !important;
+    }
+
+    .table-hover tbody tr:hover > td.info {
+      background-color: #c4e3f3 !important;
+    }
+  </style>
+  <style>
+    
+      @font-face {
+        font-family: Iceberg-Regular;
+        src: url(Iceberg-Regular.ttf);
+      }
+      .face1 {
+        font-family: Iceberg-Regular;
+        font-size: 24pt;
+      }
+      .face-normal1 {
+        font-family: Iceberg-Regular;
+        font-style: normal;
+        font-size: 24pt;
+      }
+      .face-italic1 {
+        font-family: Iceberg-Regular;
+        font-style: italic;
+        font-size: 24pt;
+      }
+    
+  </style>
+</head>
+<body>
+    <div class="container-fluid">
+        
+        
+
+
+<ul class="nav nav-tabs">
+    <li><a href="https://github.com/fontdirectory/iceberg/tree/gh-pages" target="_blank"><i class="fa fa-github"></i> gh-pages</a></li>
+    <li><a href="https://github.com/fontdirectory/iceberg" target="_blank"><i class="fa fa-github-square"></i> Github Page</a></li>
+    <li class="active"><a href="index.html">Summary</a></li>
+    <li>
+        
+        <a href="review.html">Review</a>
+        
+    </li>
+    <li><a href="checks.html">Pre-Build Checks</a></li>
+    <li><a href="tests.html">Tests</a></li>
+    <li><a href="buildlog.html">Build Log</a></li>
+    <li><a href="metadata.html">METADATA.json</a></li>
+    <li><a href="bakery-yaml.html">bakery.yaml</a></li>
+    <li><a href="description.html">Description</a></li>
+  </ul>
+
+        
+        
+        <div class="flex-container">
+          <table id="fontsTable" class="table table-striped table-bordered table-condensed tablesorter table-hover">
+          <thead>
+          <tr>
+            <th>Filename</th>
+            <th>Weight</th>
+            <th>Roman</th>
+            <th>Italic</th>
+          </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td>Iceberg-Regular.ttf</td>
+              <td>400</td>
+              <td>
+                <div class="face-normal1">
+                  Grumpy wizards make toxic brew for the evil Queen and Jack
+                </div>
+              </td>
+              <td>
+                <div class="face-italic1">
+                  Grumpy wizards make toxic brew for the evil Queen and Jack
+                </div>
+              </td>
+            </tr>
+          
+          </tbody>
+          </table>
+        </div>
+
+        
+          
+          
+            <h3>Blockers</h3>
+            <div id="piechartSum"></div>
+            <div class="flex-container">
+              <table id="blockersTable" class="table table-striped table-bordered table-condensed tablesorter table-hover">
+                <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>File</th>
+                  <th>Result</th>
+                  <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                  
+                
+                  
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_charset_latin()">
+                      <td>required</td>
+                      <td>Iceberg-Regular.latin is real TrueType file</td>
+                      <td>METADATA.json</td>
+                      <td>Iceberg-Regular.latin subset does not exist</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_charset_menu()">
+                      <td>required</td>
+                      <td>Iceberg-Regular.menu is real TrueType file</td>
+                      <td>METADATA.json</td>
+                      <td>Iceberg-Regular.menu subset does not exist</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/metadata_test.py:test_metadata_top_keys_types()">
+                      <td>required</td>
+                      <td>METADATA.json should have proper top keys types</td>
+                      <td>METADATA.json</td>
+                      <td>name key type invalid</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_filename_matches_postScriptName()">
+                      <td>required</td>
+                      <td>METADATA.json `filename` matches `postScriptName`</td>
+                      <td>METADATA.json</td>
+                      <td>u'Iceberg' != u'Iceberg-Regular'
+- Iceberg
++ Iceberg-Regular
+</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_fullname_matches_postScriptName()">
+                      <td>required</td>
+                      <td>METADATA.json `fullName` matches `postScriptName`</td>
+                      <td>METADATA.json</td>
+                      <td>u'Iceberg' != u'Iceberg Regular'
+- Iceberg
++ Iceberg Regular
+</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_metadata_agreements.py:test_metadata_regular_is_400()">
+                      <td>required</td>
+                      <td>Regular should be 400</td>
+                      <td>METADATA.json</td>
+                      <td>METADATA.json does not contain Regular font. At least one font must be Regular and its weight must be 400</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_text_files_exist.py:test_copyrighttxt_exists()">
+                      <td>required</td>
+                      <td>Font folder should contains COPYRIGHT.txt</td>
+                      <td>METADATA.json</td>
+                      <td>['COPYRIGHT.txt'] does not exist in project</td>
+                      <td>FAIL</td>
+                    </tr>
+                    <tr class="apopover" data-placement="top" data-content="bakery_lint/tests/downstream/test_check_text_files_exist.py:test_licensetxt_exists()">
+                      <td>required</td>
+                      <td>Font folder should contains LICENSE.txt</td>
+                      <td>METADATA.json</td>
+                      <td>['LICENSE.txt', 'OFL.txt'] does not exist in project</td>
+                      <td>FAIL</td>
+                    </tr>
+                
+                  
+                
+                  
+                
+                </tbody>
+              </table>
+            </div>
+          
+        
+
+        <div class="flex-container">
+          <table id="vmetTable" class="table table-striped table-bordered table-condensed tablesorter">
+            <caption><h4>Vertical metrics</h4></caption>
+            <thead>
+            <tr>
+              <th></th>
+              <th>Iceberg-Regular.ttf</th>
+            </tr>
+            </thead>
+            
+              <tr>
+                <td>ymax</td>
+                <td class="text-right">936</td>
+              </tr>
+            
+              <tr>
+                <td>hhea.ascent</td>
+                <td class="text-right">936</td>
+              </tr>
+            
+              <tr>
+                <td>OS/2.sTypoAscender</td>
+                <td class="text-right">936</td>
+              </tr>
+            
+              <tr>
+                <td>OS/2.usWinAscent</td>
+                <td class="text-right">936</td>
+              </tr>
+            
+              <tr>
+                <td>ymin</td>
+                <td class="text-right">-284</td>
+              </tr>
+            
+              <tr>
+                <td>hhea.descent</td>
+                <td class="text-right">-284</td>
+              </tr>
+            
+              <tr>
+                <td>OS/2.sTypoDescender</td>
+                <td class="text-right">-284</td>
+              </tr>
+            
+              <tr>
+                <td>OS/2.usWinDescent</td>
+                <td class="text-right">284</td>
+              </tr>
+            
+              <tr>
+                <td>hhea.lineGap</td>
+                <td class="text-right">0</td>
+              </tr>
+            
+              <tr>
+                <td>OS/2.sTypoLineGap</td>
+                <td class="text-right">0</td>
+              </tr>
+            
+              <tr>
+                <td>hhea total</td>
+                <td class="text-right">1220</td>
+              </tr>
+            
+              <tr>
+                <td>typo total</td>
+                <td class="text-right">1220</td>
+              </tr>
+            
+              <tr>
+                <td>win total</td>
+                <td class="text-right">1220</td>
+              </tr>
+            
+              <tr>
+                <td>UPM:Heights</td>
+                <td class="text-right">1000:1220</td>
+              </tr>
+            
+              <tr>
+                <td>UPM:Heights %</td>
+                <td class="text-right">122 %</td>
+              </tr>
+            
+          </table>
+        </div>
+
+        <h4>TTF Table Sizes</h4>
+        <div id="ttftablesizesDeviation"></div>
+        <div id="ttftablesizesGrouped"></div>
+        <div class="flex-container">
+          <table id="ttfTableSizesTable" class="table table-striped table-bordered table-condensed tablesorter table-hover">
+            <thead>
+            <tr>
+              <th></th>
+              
+                <th>Iceberg-Regular.ttf</th>
+              
+            </tr>
+            </thead>
+
+            
+              <tr>
+                <td>head</td>
+                
+                  <td class="text-right">54</td>
+                
+              </tr>
+            
+              <tr>
+                <td>loca</td>
+                
+                  <td class="text-right">452</td>
+                
+              </tr>
+            
+              <tr>
+                <td>name</td>
+                
+                  <td class="text-right">1292</td>
+                
+              </tr>
+            
+              <tr>
+                <td>post</td>
+                
+                  <td class="text-right">32</td>
+                
+              </tr>
+            
+              <tr>
+                <td>OS/2</td>
+                
+                  <td class="text-right">96</td>
+                
+              </tr>
+            
+              <tr>
+                <td>fpgm</td>
+                
+                  <td class="text-right">2928</td>
+                
+              </tr>
+            
+              <tr>
+                <td>maxp</td>
+                
+                  <td class="text-right">32</td>
+                
+              </tr>
+            
+              <tr>
+                <td>cmap</td>
+                
+                  <td class="text-right">602</td>
+                
+              </tr>
+            
+              <tr>
+                <td>glyf</td>
+                
+                  <td class="text-right">19292</td>
+                
+              </tr>
+            
+              <tr>
+                <td>prep</td>
+                
+                  <td class="text-right">145</td>
+                
+              </tr>
+            
+              <tr>
+                <td>gasp</td>
+                
+                  <td class="text-right">8</td>
+                
+              </tr>
+            
+              <tr>
+                <td>hhea</td>
+                
+                  <td class="text-right">36</td>
+                
+              </tr>
+            
+              <tr>
+                <td>hmtx</td>
+                
+                  <td class="text-right">900</td>
+                
+              </tr>
+            
+              <tr>
+                <td>cvt </td>
+                
+                  <td class="text-right">66</td>
+                
+              </tr>
+            
+          </table>
+        </div>
+
+        
+
+        <h4>Font Description</h4>
+        <div class="flex-container">
+        <table id="fontDescrTable" class="table table-striped table-bordered table-condensed tablesorter table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              
+                <th>Iceberg-Regular.ttf</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Common Name</th>
+              
+                <td>Iceberg</td>
+              
+            </tr>
+            <tr>
+              <th>Full Name</th>
+              
+                <td>Iceberg</td>
+              
+            </tr>
+            <tr>
+              <th>PostScript Name</th>
+              
+                <td>Iceberg-Regular</td>
+              
+            </tr>
+            <tr>
+              <th>Subfamily</th>
+              
+                <td>Regular</td>
+              
+            </tr>
+            <tr>
+              <th>Weight</th>
+              
+                <td>normal</td>
+              
+            </tr>
+            <tr>
+              <th>Version</th>
+              
+                <td>Version 1.002; ttfautohint (v1.1.107-9830) -l 7 -r 28 -G 50 -x 13 -D latn -f none -w G -X ""</td>
+              
+            </tr>
+            <tr>
+              <th>UniqueID</th>
+              
+                <td>Cyreal(www.cyreal.org): Iceberg: 2011</td>
+              
+            </tr>
+            <tr>
+              <th>Copyright</th>
+              
+                <td>Copyright (c) 2011, Cyreal (www.cyreal.org), with Reserved Font Name "Iceberg".</td>
+              
+            </tr>
+            <tr>
+              <th>License</th>
+              
+              <td>This Font Software is licensed under the SIL Open Font License,Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL</td>
+              
+            </tr>
+            <tr>
+              <th>License URL</th>
+              
+                <td><a href="http://scripts.sil.org/OFL">http://scripts.sil.org/OFL</a></td>
+              
+            </tr>
+            <tr>
+              <th>Designer</th>
+              
+                <td>Victor Kharyk</td>
+              
+            </tr>
+            <tr>
+              <th>Designer URL</th>
+              
+                <td><a href="cyreal.org">cyreal.org</a></td>
+              
+            </tr>
+            <tr>
+              <th>Vendor</th>
+              
+                <td>Cyreal (www.cyreal.org)</td>
+              
+            </tr>
+            <tr>
+              <th>Vendor URL</th>
+              
+                <td><a href="cyreal.org">cyreal.org</a></td>
+              
+            </tr>
+            <tr>
+              <th>has_fixed_sizes</th>
+              
+                <td>True</td>
+              
+            </tr>
+            <tr>
+              <th>is_fixed_width</th>
+              
+                <td>False</td>
+              
+            </tr>
+            <tr>
+              <th>style_flags</th>
+              
+                <td></td>
+              
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h4>Font Coverage characters</h4>
+        
+        <div class="flex-container">
+          <table id="fontCoverageTable" class="table table-bordered table-condensed tablesorter table-hover">
+            <thead>
+              <tr>
+                <th>Subset</th>
+                
+                  <th>Iceberg-Regular.ttf</th>
+                
+                <th>Average</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              <tr>
+                <td>Subset cyrillic</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="error coverageStats">0%</td>
+                  <td data-subset="Subset cyrillic" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">0%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset cyrillic-ext</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="error coverageStats">0%</td>
+                  <td data-subset="Subset cyrillic-ext" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">0%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset cyrillic-menu</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="warning coverageStats">33%</td>
+                  <td data-subset="Subset cyrillic-menu" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                        
+                          &#1050;
+                        
+                          &#1072;
+                        
+                          &#1080;
+                        
+                          &#1083;
+                        
+                          &#1088;
+                        
+                          &#1094;
+                        
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">33%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset devanagari</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="error coverageStats">0%</td>
+                  <td data-subset="Subset devanagari" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">0%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset greek</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="error coverageStats">0%</td>
+                  <td data-subset="Subset greek" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">0%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset greek-ext</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="error coverageStats">0%</td>
+                  <td data-subset="Subset greek-ext" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">0%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset greek-menu</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="warning coverageStats">23%</td>
+                  <td data-subset="Subset greek-menu" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                        
+                          &#900;
+                        
+                          &#917;
+                        
+                          &#945;
+                        
+                          &#940;
+                        
+                          &#949;
+                        
+                          &#951;
+                        
+                          &#953;
+                        
+                          &#954;
+                        
+                          &#955;
+                        
+                          &#957;
+                        
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">23%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset latin</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="info coverageStats">97%</td>
+                  <td data-subset="Subset latin" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                        
+                          &#8482;
+                        
+                          &#8725;
+                        
+                          &#57599;
+                        
+                          &#61437;
+                        
+                          &#61440;
+                        
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">97%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset latin-ext</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="error coverageStats">0%</td>
+                  <td data-subset="Subset latin-ext" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">0%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset vietnamese</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="warning coverageStats">1%</td>
+                  <td data-subset="Subset vietnamese" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                        
+                          &#258;
+                        
+                          &#259;
+                        
+                          &#7840;
+                        
+                          &#7841;
+                        
+                          &#7842;
+                        
+                          &#7843;
+                        
+                          &#7844;
+                        
+                          &#7845;
+                        
+                          &#7846;
+                        
+                          &#7847;
+                        
+                          &#7848;
+                        
+                          &#7849;
+                        
+                          &#7850;
+                        
+                          &#7851;
+                        
+                          &#7852;
+                        
+                          &#7853;
+                        
+                          &#7854;
+                        
+                          &#7855;
+                        
+                          &#7856;
+                        
+                          &#7857;
+                        
+                          &#7858;
+                        
+                          &#7859;
+                        
+                          &#7860;
+                        
+                          &#7861;
+                        
+                          &#7862;
+                        
+                          &#7863;
+                        
+                          &#7864;
+                        
+                          &#7865;
+                        
+                          &#7866;
+                        
+                          &#7867;
+                        
+                          &#7868;
+                        
+                          &#7869;
+                        
+                          &#7870;
+                        
+                          &#7871;
+                        
+                          &#7872;
+                        
+                          &#7873;
+                        
+                          &#7874;
+                        
+                          &#7875;
+                        
+                          &#7876;
+                        
+                          &#7877;
+                        
+                          &#7878;
+                        
+                          &#7879;
+                        
+                          &#7880;
+                        
+                          &#7881;
+                        
+                          &#7882;
+                        
+                          &#7883;
+                        
+                          &#7884;
+                        
+                          &#7885;
+                        
+                          &#7886;
+                        
+                          &#7887;
+                        
+                          &#7888;
+                        
+                          &#7889;
+                        
+                          &#7890;
+                        
+                          &#7891;
+                        
+                          &#7892;
+                        
+                          &#7893;
+                        
+                          &#7894;
+                        
+                          &#7895;
+                        
+                          &#7896;
+                        
+                          &#7897;
+                        
+                          &#7898;
+                        
+                          &#7899;
+                        
+                          &#7900;
+                        
+                          &#7901;
+                        
+                          &#7902;
+                        
+                          &#7903;
+                        
+                          &#7904;
+                        
+                          &#7905;
+                        
+                          &#7906;
+                        
+                          &#7907;
+                        
+                          &#7908;
+                        
+                          &#7909;
+                        
+                          &#7910;
+                        
+                          &#7911;
+                        
+                          &#7912;
+                        
+                          &#7913;
+                        
+                          &#7914;
+                        
+                          &#7915;
+                        
+                          &#7916;
+                        
+                          &#7917;
+                        
+                          &#7918;
+                        
+                          &#7919;
+                        
+                          &#7920;
+                        
+                          &#7921;
+                        
+                          &#8363;
+                        
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">1%</td>
+              </tr>
+            
+              <tr>
+                <td>Subset vietnamese-menu</td>
+                
+                  <td data-toggle="modal" data-target="#myModal" class="info coverageStats">80%</td>
+                  <td data-subset="Subset vietnamese-menu" data-fontname="Iceberg-Regular.ttf" class="hidden">
+                    <div>
+                      
+                        
+                          &#7889;
+                        
+                          &#7919;
+                        
+                      
+                    </div>
+                  </td>
+                
+                <td data-toggle="modal" data-target="#myModal" class="coverageAverage">80%</td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    
+    
+  <footer class="footer">
+    <div class="container-fluid">
+      <ul class="footer-links">
+        <li><a href='https://github.com/googlefonts/fontbakery-cli/edit/master/bakery_cli/report/templates/index.html'>Edit this page's template</a></li>
+        <li><a href='https://github.com/googlefonts/fontbakery-cli/'>Made with Font Bakery</a> (<a href='http://www.gnu.org/philosophy/free-sw.html'>libre software</a> available under the terms of the <a href='https://github.com/googlefonts/fontbakery-cli/blob/master/LICENSE.txt'>Apache 2.0 license</a>.)</li>
+        <li>Please <a href='https://github.com/googlefonts/fontbakery-cli/issues/new'>report bugs</a>, suggest features, and contribute on <a href='https://github.com/googlefonts/fontbakery-cli/'>GitHub <i class='icon-github'></i></a></li>
+        
+        <li>fa30863d4ea1f546092305ec0f12a4de890080fc, Fri Sep 19 10:54:44 2014 +0300</li>
+        
+      </ul>
+    </div>
+  </footer>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Missing characters</h4>
+          <p id="myModalInfo"></p>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.7/js/jquery.tablesorter.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+    
+
+    
+
+    
+
+    var data = google.visualization.arrayToDataTable([
+        ['Tests', '#'],
+        ['Success 47', 47],
+        ['Fixed 0', 0],
+        ['Failed 15', 15],
+        ['Error 0', 0]
+    ]);
+
+    var options = {
+      is3D: true,
+      colors: ['#468847', '#3a87ad', '#b94a48', '#c09853'],
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechartSum'));
+    chart.draw(data, options);
+    
+    
+
+    var headings = $.merge( ["Table", "Average"], ['Iceberg-Regular.ttf'] );
+    var aggregated_table = [];
+
+    aggregated_table.push(headings);
+
+    $([['head', 54, 54], ['loca', 452, 452], ['maxp', 32, 32], ['name', 1292, 1292], ['post', 32, 32], ['OS/2', 96, 96], ['fpgm', 2928, 2928], ['hmtx', 900, 900], ['cmap', 602, 602], ['glyf', 19292, 19292], ['gasp', 8, 8], ['hhea', 36, 36], ['prep', 145, 145], ['cvt ', 66, 66]]).each(function(i){
+      aggregated_table.push(this)
+    });
+
+    var data = google.visualization.arrayToDataTable(aggregated_table);
+    var chart = new google.visualization.LineChart(document.getElementById('ttftablesizesGrouped'));
+    var options = {
+      title: "Fonts compared to average",
+      is3D: true,
+      vAxis: {
+        title: "Size (bytes)"
+      },
+      hAxis: {
+        slantedText: true
+      },
+      height: 500
+    };
+    chart.draw(data, options);
+
+
+    if (['Iceberg-Regular.ttf'].length > 1) {
+      var headings = $.merge( ["Table"], ['Iceberg-Regular.ttf'] );
+      var deviation_table = [];
+
+      deviation_table.push(headings);
+
+      $([['head', 0], ['loca', 0], ['name', 0], ['OS/2', 0], ['maxp', 0], ['hhea', 0], ['hmtx', 0], ['cmap', 0], ['glyf', 0], ['prep', 0], ['gasp', 0], ['post', 0], ['fpgm', 0], ['cvt ', 0]]).each(function(i){
+        deviation_table.push(this)
+      });
+
+      var data = google.visualization.arrayToDataTable(deviation_table);
+      var chart = new google.visualization.ColumnChart(document.getElementById('ttftablesizesDeviation'));
+      var options = {
+        bar: {groupWidth: "68%"},
+        title: "Deviation from an average",
+        is3D: true,
+        vAxis: {
+          title: "Deviation (bytes)"
+        },
+        hAxis: {
+          slantedText: true,
+        },
+        height: 500,
+      };
+      chart.draw(data, options);
+    }
+  }
+</script>
+<script>
+  $(document)
+      .ready(function() {
+        // use default sorting for tables when the document is loaded
+        // and exclude some tables that need special default sorting
+        var blockersTable = $("#blockersTable");
+        $('.tablesorter').not(blockersTable).tablesorter();
+
+        // redefine default sorting for table
+        $(blockersTable).tablesorter({sortList: [[$(blockersTable).find('tr:first th:contains("Status")').index(), 0]]} );
+
+        // add popup to cols
+        $('.apopover').each(function (index, item) {
+          $(item).popover();
+        });
+
+        // colorize column with average coverage value
+        // in Font Coverage characters table
+        $("td.coverageAverage").each(function(i){
+          var td_col_average = $(this),
+              td_class = td_col_average.parent('tr').find("[data-toggle='modal']").attr('class');
+          td_col_average.addClass(td_class)
+        });
+      })
+      .on("click", "td.coverageStats", function() {
+        // show modal window on click in td
+        // in Font Coverage characters table
+        var hidden_td = $(this).closest('td').next(),
+            missing_chars = hidden_td.html(),
+            subset = hidden_td.attr("data-subset"),
+            font = hidden_td.attr("data-fontname");
+        $("#myModalInfo").html("<h5>"+font+"</h5><small>"+subset+"</small>");
+        $(".modal-body").html(missing_chars);
+      })
+      .on("click", "td.coverageAverage", function() {
+        var parent_tr = $(this).parent('tr'),
+            subset = $(parent_tr).find('td.hidden:first').attr("data-subset"),
+            modal_body = $(".modal-body");
+        modal_body.empty();
+        $("#myModalInfo").html("<h5>"+subset+"</h5>");
+        $(parent_tr).find('td.hidden').each(function(i){
+          var font = $(this).attr("data-fontname"),
+              missing_chars = $(this).html();
+          modal_body.append("<strong>"+font+"</strong>"+missing_chars+"<hr>")
+        });
+      });
+</script>
+</body>
+</html>

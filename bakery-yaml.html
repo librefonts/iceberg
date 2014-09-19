@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bakery.yaml</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+<style type="text/css">
+  .popover {
+    max-width: 1980px;
+    font-family: Courier,serif;
+}
+
+.footer {
+  color: #bbb;
+  text-align: center;
+  font-size: smaller;
+  padding: 0 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer:hover {
+  color: #444;
+}
+
+.footer a {
+  color: #add8e6;
+}
+
+.footer:hover a {
+  color: #0088cc;
+}
+
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  list-style: none;
+  line-height: 1.2em;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+  
+  
+
+
+<ul class="nav nav-tabs">
+    <li><a href="https://github.com/fontdirectory/iceberg/tree/gh-pages" target="_blank"><i class="fa fa-github"></i> gh-pages</a></li>
+    <li><a href="https://github.com/fontdirectory/iceberg" target="_blank"><i class="fa fa-github-square"></i> Github Page</a></li>
+    <li><a href="index.html">Summary</a></li>
+    <li>
+        
+        <a href="review.html">Review</a>
+        
+    </li>
+    <li><a href="checks.html">Pre-Build Checks</a></li>
+    <li><a href="tests.html">Tests</a></li>
+    <li><a href="buildlog.html">Build Log</a></li>
+    <li><a href="metadata.html">METADATA.json</a></li>
+    <li class="active"><a href="bakery-yaml.html">bakery.yaml</a></li>
+    <li><a href="description.html">Description</a></li>
+  </ul>
+
+  <div id="editor"></div>
+  <textarea name="bakery-yaml" id="bakery-yaml">commit: HEAD
+process_files: [Iceberg-Regular.ttf.ttx, src/Iceberg-Regular.otf.ttx]
+pyftsubset: --notdef-outline --name-IDs=* --hinting
+subset: [latin]
+ttfautohint: -l 7 -r 28 -G 50 -x 13 -w "G"
+</textarea>
+  
+  
+  <p class="navbar-text navbar-left">
+    <span><a href="https://github.com/fontdirectory/iceberg/blob/master/bakery.yaml" class="navbar-link">View</a></span>
+    <span><a href="https://github.com/fontdirectory/iceberg/edit/master/bakery.yaml" class="navbar-link">Edit</a></span>
+  </p>
+</div>
+<!-- Footer -->
+
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <ul class="footer-links">
+        <li><a href='https://github.com/googlefonts/fontbakery-cli/edit/master/bakery_cli/report/templates/bakery-yaml.html'>Edit this page's template</a></li>
+        <li><a href='https://github.com/googlefonts/fontbakery-cli/'>Made with Font Bakery</a> (<a href='http://www.gnu.org/philosophy/free-sw.html'>libre software</a> available under the terms of the <a href='https://github.com/googlefonts/fontbakery-cli/blob/master/LICENSE.txt'>Apache 2.0 license</a>.)</li>
+        <li>Please <a href='https://github.com/googlefonts/fontbakery-cli/issues/new'>report bugs</a>, suggest features, and contribute on <a href='https://github.com/googlefonts/fontbakery-cli/'>GitHub <i class='icon-github'></i></a></li>
+        
+        <li>fa30863d4ea1f546092305ec0f12a4de890080fc, Fri Sep 19 10:54:44 2014 +0300</li>
+        
+      </ul>
+    </div>
+  </footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.7/js/jquery.tablesorter.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+<script>
+  $(document).ready(function () {
+
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/solarized_light");
+    editor.getSession().setMode("ace/mode/html");
+    editor.getSession().setUseSoftTabs(false);
+    editor.getSession().setUseWrapMode(true);
+    editor.setHighlightActiveLine(false);
+
+    var textarea = $('textarea[name="bakery-yaml"]').hide();
+    editor.getSession().setUseWrapMode(true);
+    editor.getSession().setValue(textarea.val());
+    editor.setReadOnly(true);
+
+    // From https://gist.github.com/hostilefork/6325151 & http://stackoverflow.com/questions/11584061/
+    var heightUpdateFunction = function() {
+      var newHeight =
+          editor.getSession().getScreenLength()
+              * editor.renderer.lineHeight
+              + editor.renderer.scrollBar.getWidth();
+      $('#editor').height(newHeight.toString() + "px");
+      $('#editor-section').height(newHeight.toString() + "px");
+      // This call is required for the editor to fix all of its
+      // inner structure for adapting to a change in size
+      editor.resize();
+    };
+
+    heightUpdateFunction();
+  });
+</script>
+</body>
+</html>
